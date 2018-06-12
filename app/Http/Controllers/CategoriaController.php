@@ -16,8 +16,7 @@ class CategoriaController extends Controller
     public function index(Request $request){
         if ($request){
             $query=trim($request->get('searchText'));
-            $categorias = DB::table('categoria')
-                ->where('nome', 'LIKE', '%'. $query .'%')
+            $categorias = Categoria::where('nome', 'LIKE', '%'. $query .'%')
                 ->where('condicao', '=', true)
                 ->orderBy('id', 'desc')
                 ->paginate(7);
@@ -29,7 +28,7 @@ class CategoriaController extends Controller
     }
     
     public function create(){
-        //'estoque.categoria.create'
+        return view('estoque.categoria.create');
     }
     
     public function store(CategoriaFormRequest $request){
