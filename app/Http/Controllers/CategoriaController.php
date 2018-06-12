@@ -18,7 +18,7 @@ class CategoriaController extends Controller
             $searchText = trim($request->get('searchText'));
             $categorias = Categoria::where('nome', 'LIKE', '%'. $searchText .'%')
                 ->where('condicao', '=', true)
-                ->orderBy('id', 'desc')
+                //->orderBy('id', 'desc')
                 ->paginate(7);
             
             return view('estoque.categoria.index', compact('categorias', 'searchText'));
