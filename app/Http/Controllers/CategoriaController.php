@@ -29,14 +29,14 @@ class CategoriaController extends Controller
         return view('estoque.categoria.create');
     }
     
-    public function store(CategoriaFormRequest $request){
+    public function store(Request $request){
         $categoria = new Categoria;
         $categoria->nome = $request->get('nome');
         $categoria->descricao = $request->get('descricao');
         $categoria->condicao = true;
         $categoria->save();
 
-        return Redirect::to('estoque/categoria');
+        return Redirect('estoque/categoria');
     }
     
     public function show($id){
@@ -50,20 +50,20 @@ class CategoriaController extends Controller
         return view('estoque.categoria.edit', compact('categoria')); 
     }
 
-    public function update(CategoriaFormRequest $request, $id){
+    public function update(Request $request, $id){
         $categoria = Categoria::findOrFail($id);
         $categoria->nome = $request->get('nome');
         $categoria->descricao = $request->get('descricao');
         $categoria->update();
 
-        return Redirect::to('estoque/categoria');
+        return Redirect('estoque/categoria');
     }
 
-    public function destroy($id){
+    public function destroy(Request $request, $id){
         $categoria = Categoria::findOrFail($id);
         $categoria->condicao = false;
         $categoria->update();
 
-        return Redirect::to('estoque/categoria');
+        return Redirect('estoque/categoria');
     }
 }
