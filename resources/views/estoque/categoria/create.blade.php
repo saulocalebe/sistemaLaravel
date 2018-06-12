@@ -1,4 +1,4 @@
 @extends('layouts.admin');
 @section('conteudo');
-<h3> Index </h3>
+<h3> Create </h3>
 @stop
