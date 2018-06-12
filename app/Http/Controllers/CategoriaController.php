@@ -15,15 +15,13 @@ class CategoriaController extends Controller
 
     public function index(Request $request){
         if ($request){
-            $query=trim($request->get('searchText'));
-            $categorias = Categoria::where('nome', 'LIKE', '%'. $query .'%')
+            $searchText = trim($request->get('searchText'));
+            $categorias = Categoria::where('nome', 'LIKE', '%'. $searchText .'%')
                 ->where('condicao', '=', true)
                 ->orderBy('id', 'desc')
                 ->paginate(7);
             
-            return view('estoque.categoria.index', [
-                'categorias '=> $categorias, 'searchText' => $query
-            ]);
+            return view('estoque.categoria.index', compact('categorias', 'searchText'));
         }
     }
     
@@ -48,9 +46,8 @@ class CategoriaController extends Controller
     }
 
     public function edit($id){
-        return view('estoque.categoria.edit', [
-            'categoria' => Categoria::findOrFail($id)
-        ]); 
+        $categoria = Categoria::findOrFail($id);
+        return view('estoque.categoria.edit', compact('categoria')); 
     }
 
     public function update(CategoriaFormRequest $request, $id){

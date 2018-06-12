@@ -29,7 +29,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>HV</b>V</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>HV - Vendas</b></span>
+          <span class="logo-lg"><b>Estoque</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -41,34 +41,7 @@
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <!-- Messages: style can be found in dropdown.less-->
-              
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Hugo Vasconcelos de Freitas</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    
-                    <p>
-                      www.hugocursos.com.br - Desenvolvimento de Sistemas
-                      <small>www.youtube.com/tutoriais01</small>
-                    </p>
-                  </li>
-                  
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Fechar</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              
+              <!-- Messages: style can be found in dropdown.less-->             
             </ul>
           </div>
 
@@ -187,16 +160,7 @@
           </div><!-- /.row -->
 
         </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-      <!--Fin-Contenido-->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Versão</b> 5.3.0
-        </div>
-        <strong>Copyright &copy; 2015-2020 <a href="www.hugocursos.com.br">Q-Cursos</a>.</strong> Todos os direitos reservados.
-      </footer>
-
-      
+      </div><!-- /.content-wrapper -->     
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->
