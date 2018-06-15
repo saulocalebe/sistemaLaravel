@@ -26,7 +26,7 @@ class Produtos extends Migration
             $table->timestamps();
         });
 
-        Schema::table('categorias', function (Blueprint $table) {
+        Schema::table('produtos', function (Blueprint $table) {
             $table->foreign('categoria_id')->references('id')->on('categorias');
         });
     }
