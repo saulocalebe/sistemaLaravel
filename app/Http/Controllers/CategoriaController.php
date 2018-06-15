@@ -7,6 +7,7 @@ use sistemaLaravel\Categoria;
 use Illuminate\Support\Facedes\Redirect;
 use sistemaLaravel\Http\Request\CategoriaFormRequest;
 use DB;
+use Validator;
 class CategoriaController extends Controller
 {
     public function __construct(){
@@ -30,6 +31,13 @@ class CategoriaController extends Controller
     }
     
     public function store(Request $request){
+        $rules = [
+            'nome'      => ['required', 'string'],
+            'descricao' => ['string']
+        ];
+        
+        $this->validate($request, $rules); 
+        
         $categoria = new Categoria;
         $categoria->nome = $request->get('nome');
         $categoria->descricao = $request->get('descricao');
@@ -51,11 +59,18 @@ class CategoriaController extends Controller
     }
 
     public function update(Request $request, $id){
+        $rules = [
+            'nome'      => ['required', 'string'],
+            'descricao' => ['string']
+        ];
+        
+        $this->validate($request, $rules); 
+
         $categoria = Categoria::findOrFail($id);
         $categoria->nome = $request->get('nome');
         $categoria->descricao = $request->get('descricao');
         $categoria->update();
-
+        
         return Redirect('estoque/categoria');
     }
 
